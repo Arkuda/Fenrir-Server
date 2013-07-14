@@ -1,2 +1,1 @@
-Fenrir-Server
-=============
+* Fenrir server
