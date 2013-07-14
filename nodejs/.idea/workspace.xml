@@ -26,16 +26,7 @@
       <file leaf-file-name="srvr.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/srvr.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="10" selection-start="993" selection-end="993" vertical-scroll-proportion="0.50056624" vertical-offset="306" max-vertical-offset="1547">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.ejs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="38" selection-start="1503" selection-end="1503" vertical-scroll-proportion="-26.807692" vertical-offset="51" max-vertical-offset="1122">
+            <state line="80" column="129" selection-start="1803" selection-end="1803" vertical-scroll-proportion="0.6738392" vertical-offset="765" max-vertical-offset="2108">
               <folding />
             </state>
           </provider>
@@ -44,7 +35,25 @@
       <file leaf-file-name="login.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="986">
+            <state line="31" column="73" selection-start="1233" selection-end="1233" vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="986">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/layout.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="1068" selection-end="1068" vertical-scroll-proportion="-14.653846" vertical-offset="163" max-vertical-offset="1445">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="46" selection-start="1727" selection-end="1727" vertical-scroll-proportion="-27.538462" vertical-offset="100" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -62,7 +71,9 @@
       <list>
         <option value="$PROJECT_DIR$/views/list.ejs" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/views/layout.ejs" />
         <option value="$PROJECT_DIR$/views/home.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/srvr.coffee" />
       </list>
     </option>
@@ -142,25 +153,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nodejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,15 +187,16 @@
       <option name="testName" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="false" name="srvr.coffee" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="srvr.coffee" working-dir="$PROJECT_DIR$" coffeescript-path="I:\Games\MineCraft\GitForks\Fenrir-Server\nodejs\node_modules\coffee-script\bin\coffee" coffeescript-run="true">
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
-      <method>
-        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_Browser_Chrome" />
-      </method>
+      <method />
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Node.js.srvr.coffee" />
@@ -370,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="139" selection-end="139" vertical-scroll-proportion="-0.5367561" vertical-offset="545" max-vertical-offset="1428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="129976" selection-start="130205" selection-end="130205" vertical-scroll-proportion="0.15632184" vertical-offset="0" max-vertical-offset="870">
@@ -391,13 +378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="38" selection-start="1503" selection-end="1503" vertical-scroll-proportion="-26.807692" vertical-offset="51" max-vertical-offset="1122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/list.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="44" selection-start="651" selection-end="651" vertical-scroll-proportion="0.3222749" vertical-offset="0" max-vertical-offset="867">
@@ -405,16 +385,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1068" selection-end="1068" vertical-scroll-proportion="-14.653846" vertical-offset="163" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="46" selection-start="1727" selection-end="1727" vertical-scroll-proportion="-27.538462" vertical-offset="100" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+        <state line="31" column="73" selection-start="1233" selection-end="1233" vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="986">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/srvr.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="10" selection-start="993" selection-end="993" vertical-scroll-proportion="0.50056624" vertical-offset="306" max-vertical-offset="1547">
+        <state line="80" column="129" selection-start="1803" selection-end="1803" vertical-scroll-proportion="0.6738392" vertical-offset="765" max-vertical-offset="2108">
           <folding />
         </state>
       </provider>

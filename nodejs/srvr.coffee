@@ -10,7 +10,7 @@ locals = {
 }
 
 
-##CLIENTS
+##-------------CLIENTS---------
 
 ##client struct
 createClient = (ipAddr,unicleName,lastPing,info,msg)->
@@ -42,10 +42,41 @@ isHaveInBase = (ipAddr,unicleName,lastPing,info,msg)->
 loger = (req,res,unicleName,msg)->
    ipAddr = req.connection.remoteAddress
    dateManager = new Date()
-   date = dateManager.getDay() +":"+  dateManager.getMonth() +"|"+ (dateManager.getUTCHours() + 3) +":"+dateManager.getMinutes()
+   date = dateManager.getDay().toString() +":"+  dateManager.getMonth().toString() +"|"+ dateManager.getUTCHours().toString() +":"+dateManager.getMinutes().toString()
    isHaveInBase(ipAddr,unicleName,date,'',msg)
 ##logger
-##CLIENTS
+
+##-------------CLIENTS---------
+
+
+
+
+##--------AUTH--------
+
+checkAuth = (req,res,next) ->
+  if not req.session.user_id
+    res.send("You are not authorized to view this page")
+  else
+    next()
+
+app.get '/login', (req,res) ->
+  res.render('login.ejs',locals)
+
+app.get '/logout', (req,res) ->
+  delete req.session.user_id
+  res.redirect('/login')
+
+
+app.post '/logins', (req,res) ->
+    post = req.body
+    if (post.name is "admin") and (post.password is "admpass")
+      req.session.user_id = Math.random()
+    else
+      res.send('Bad user/pass')
+
+
+##--------AUTH--------
+
 
 
 app.get '/', (req,res) ->
@@ -54,6 +85,8 @@ app.get '/', (req,res) ->
 
 #app.get '/admin', (req, res) ->
 #    res.render('admin.ejs', locals)
+
+
 
 
 app.get '/log/:cuniclename/:cmsg',(req, res) ->
