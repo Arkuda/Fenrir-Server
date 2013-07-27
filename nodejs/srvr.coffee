@@ -1,39 +1,72 @@
+#   BY ARKUDA63
+#
+#
+#            {
+#         }   }   {
+#        {   {  }  }
+#         }   }{  {
+#        {  }{  }  }                    _____       __  __
+#       ( }{ }{  { )                   / ____|     / _|/ _|
+#     .- { { }  { }} -.               | |     ___ | |_| |_ ___  ___
+#    (  ( } { } { } }  )              | |    / _ \|  _|  _/ _ \/ _ \
+#    |`-..________ ..-'|              | |___| (_) | | | ||  __/  __/
+#    |                 |               \_____\___/|_| |_| \___|\___|
+#    |                 ;--.
+#    |                (__  \            _____           _       _
+#    |                 | )  )          / ____|         (_)     | |
+#    |                 |/  /          | (___   ___ _ __ _ _ __ | |_
+#    |                 (  /            \___ \ / __| '__| | '_ \| __|
+#    |                 |/              ____) | (__| |  | | |_) | |_
+#    |                 |              |_____/ \___|_|  |_| .__/ \__|
+#     `-.._________..-'                                  | |
+#                                                        |_|
+#
+
+
+
 
 app = require('./app').init(4000)
+fs = require('fs')
+
 
 
 locals = {
   title: 		   'Fenrir',
   description: 'KARO4u LOL APP',
   author: 	   'Arkuda63',
-  _layoutFile: true
+  fileSave:    "save.frs",
+  fileReqLog:  "reqlog.frs",
+  uploadPath:  "/temp/",
+  _layoutFile: true,
+  debugIsOn:   true
 }
+
 
 
 ##-------------CLIENTS---------
 
 ##client struct
-createClient = (ipAddr,unicleName,lastPing,info,msg)->
+createClient = (ipAddr,unicleName,lastPing,msg)->
   rClient =
     ipAddr: ipAddr
     unicleName: unicleName
     lastPing: lastPing
-    info: info
     msg: msg
   return rClient
 ##/client struct
 
-arrayOfClients = [createClient("ip","uname","lastping","info","msg"),'']
+arrayOfClients = [createClient("ip","uname","lastping","msg"),'']
 
 ##is have client in base
-isHaveInBase = (ipAddr,unicleName,lastPing,info,msg)->
+isHaveInBase = (ipAddr,unicleName,lastPing,msg)->
   ishave = false
   for rClient in arrayOfClients
       if rClient.unicleName is unicleName
-         res = `arrayOfClients[_i].lastPing = this.lastPing` #js
+         dateManager = new Date()
+         res = `arrayOfClients[_i].lastPing = dateManager.toJSON();` #js
          ishave = true
   if ishave is false
-    reCl = createClient(ipAddr,unicleName,lastPing,info,msg)
+    reCl = createClient(ipAddr,unicleName,lastPing,msg)
     arrayOfClients.push(reCl)
     ishave = true
 ##is have client in base
@@ -42,77 +75,80 @@ isHaveInBase = (ipAddr,unicleName,lastPing,info,msg)->
 loger = (req,res,unicleName,msg)->
    ipAddr = req.connection.remoteAddress
    dateManager = new Date()
-   date = dateManager.getDay().toString() +":"+  dateManager.getMonth().toString() +"|"+ dateManager.getUTCHours().toString() +":"+dateManager.getMinutes().toString()
-   isHaveInBase(ipAddr,unicleName,date,'',msg)
+   date = dateManager.toJSON()
+   isHaveInBase(ipAddr,unicleName,date,msg)
 ##logger
 
 ##-------------CLIENTS---------
 
 
 
+##-----------LOAD AND SAVE-----
+saveToJson = ()->
+  sjson = JSON.stringify(arrayOfClients)
+  fs.writeFileSync(locals.fileSave,sjson)
 
-##--------AUTH--------
-
-checkAuth = (req,res,next) ->
-  if not req.session.user_id
-    res.send("You are not authorized to view this page")
-  else
-    next()
-
-app.get '/login', (req,res) ->
-  res.render('login.ejs',locals)
-
-app.get '/logout', (req,res) ->
-  delete req.session.user_id
-  res.redirect('/login')
+loadJson = (res)->
+  fs.readFile(locals.fileSave,(err,data)->
+      arrayOfClients = JSON.parse(data))
+##-----------LOAD AND SAVE-----
 
 
-app.post '/logins', (req,res) ->
-    post = req.body
-    if (post.name is "admin") and (post.password is "admpass")
-      req.session.user_id = Math.random()
-    else
-      res.send('Bad user/pass')
+
+##-----------DEBUG AREA--------
+printDebug = (msg)->
+  if locals.debugIsOn
+    console.info("[D]: " + msg)
+
+logRequest = (req)->
+    fileinn = fs.readFile(locals.fileReqLog,(err,data)->
+      dateManager = new Date()
+      date = dateManager.toJSON()
+      data = data + "\n" + "[REQ] in " + date + " ; on \"" + req.url + "\" ; with ip: " + req.connection.remoteAddress + " ; "
+      fs.writeFile(locals.fileReqLog,data)
+      )
+##-----------DEBUG AREA--------
 
 
-##--------AUTH--------
 
 
+
+
+##------------ROUTING----------
 
 app.get '/', (req,res) ->
     locals.date = new Date().toLocaleDateString()
+    logRequest(req)
     res.render('home.ejs', locals)
-
-#app.get '/admin', (req, res) ->
-#    res.render('admin.ejs', locals)
-
-
 
 
 app.get '/log/:cuniclename/:cmsg',(req, res) ->
     loger(req,res,req.params.cuniclename,req.params.cmsg)
+    saveToJson()
+    logRequest(req)
     res.render('404.ejs', locals)
 
+
 app.get '/list', (req, res) ->
+    loadJson(res)
+    logRequest(req)
     res.render('list.ejs', { locals: { arrayOfCl: arrayOfClients, title: locals.title, description: locals.description, author: locals.author, _layoutFile: locals._layoutFile }})
 
 
+app.get '/upld', (req,res) ->
+    logRequest(req)
+    res.render('upload.ejs', locals)
+
+
+app.post '/upld', (req,res,next) ->
+    sfile = req.files.userFile
+    fs.writeFile(locals.uploadPath + sfile.name,sfile)
+
 
 app.get '/*', (req,res) ->
+    logRequest(req)
     res.render('404.ejs', locals)
 
-
-
-
-
-
-
-
-
-#app.get('/user/:id', function(req, res){
-#res.send('user ' + req.params.id);
-#});
-
-
+##------------ROUTING----------
 
 
