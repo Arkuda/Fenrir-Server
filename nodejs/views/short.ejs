@@ -1,0 +1,82 @@
+
+
+<%- include menu.ejs %>
+
+<% if(!isFirst) { %>
+<form class="form-horizontal" method="post" action="/s">
+    <fieldset>
+<div class="alert">
+    <h3>
+        <a href="http://<%= siteUrl %>/s/<%= shortLink %>"><%= siteUrl %>/s/<%= shortLink %></a>
+    </h3>
+    <p>
+        It's u shortlink :)
+    </p>
+</div>
+    </fieldset>
+</form>
+<% } else { %>
+
+<form class="form-horizontal" method="post" action="/s">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label">Url</label>
+            <div class="controls">
+                <input id="FullUrl" name="FullUrl" type="text" placeholder="YouTruba.ru" class="input-xlarge" required="">
+
+            </div>
+        </div>
+
+        <!-- Multiple Radios -->
+        <div class="control-group">
+            <label class="control-label">Select short</label>
+            <div class="controls">
+                <label class="radio">
+                    <input type="radio" name="linkGen" value="Generate short" checked="checked">
+                    Generate short
+                </label>
+                <label class="radio">
+                    <input type="radio" name="linkGen" value="Write short name">
+                    Write short name
+                </label>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label">ShortName</label>
+            <div class="controls">
+                <input id="ShortName" name="ShortName" type="text" placeholder="DATA" class="input-xlarge">
+
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="control-group">
+            <label class="control-label">Password</label>
+            <div class="controls">
+                <input id="pass" name="pass" type="password" placeholder="1234" class="input-xlarge" required="">
+
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label"></label>
+            <div class="controls">
+                <button id="post" name="post" class="btn btn-primary">CREATE !!1!1АДЫН</button>
+            </div>
+        </div>
+
+
+
+    </fieldset>
+</form>
+<% } %>
+
+<!-- /container -->

@@ -26,7 +26,16 @@
       <file leaf-file-name="srvr.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/srvr.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="4" selection-start="3177" selection-end="3177" vertical-scroll-proportion="0.37606838" vertical-offset="1837" max-vertical-offset="2720">
+            <state line="164" column="89" selection-start="4434" selection-end="4434" vertical-scroll-proportion="3.0600226" vertical-offset="86" max-vertical-offset="3519">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="short.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/short.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="64" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1479">
               <folding />
             </state>
           </provider>
@@ -46,11 +55,13 @@
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/views/menu.ejs" />
         <option value="$PROJECT_DIR$/views/list.ejs" />
         <option value="$PROJECT_DIR$/views/home.ejs" />
         <option value="$PROJECT_DIR$/views/upload.ejs" />
         <option value="$PROJECT_DIR$/reqlog.frs" />
+        <option value="$PROJECT_DIR$/views/menu.ejs" />
+        <option value="$PROJECT_DIR$/views/short.ejs" />
+        <option value="$PROJECT_DIR$/short.frs" />
         <option value="$PROJECT_DIR$/srvr.coffee" />
       </list>
     </option>
@@ -58,7 +69,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -103,6 +114,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -121,9 +133,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodejs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodejs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,8 +165,8 @@
   <component name="PublishConfig" serverName="FenrirServer" serverId="11cbe2e0-58e8-403b-ba24-d091364abc8a" />
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\Games\MineCraft\GitForks\Fenrir-Server\nodejs\static\css" />
       <recent name="I:\Games\MineCraft\GitForks\Fenrir-Server\nodejs\views" />
+      <recent name="I:\Games\MineCraft\GitForks\Fenrir-Server\nodejs\static\css" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.srvr.coffee">
@@ -195,16 +220,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1066" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16957211" sideWeight="0.67216724" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16921455" sideWeight="0.67216724" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5002636" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5002636" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.49973643" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -279,21 +304,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/layout.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1068" selection-end="1068" vertical-scroll-proportion="-0.61469537" vertical-offset="887" max-vertical-offset="1445" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="129803" selection-start="130032" selection-end="130032" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.original.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="59534" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="129976" selection-start="130205" selection-end="130205" vertical-scroll-proportion="0.23817864" vertical-offset="0" max-vertical-offset="571" />
@@ -302,11 +312,6 @@
     <entry file="file://$PROJECT_DIR$/tools/fulljshint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="784" column="12" selection-start="31726" selection-end="31726" vertical-scroll-proportion="13.995402" vertical-offset="608" max-vertical-offset="99926" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/menu.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="53" selection-start="579" selection-end="579" vertical-scroll-proportion="0.23803967" vertical-offset="0" max-vertical-offset="857" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/lib/middleware/multipart.js">
@@ -341,9 +346,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/upload.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="41" selection-start="270" selection-end="278" vertical-scroll-proportion="0.3046595" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
+        <state line="10" column="41" selection-start="270" selection-end="278" vertical-scroll-proportion="0.3046595" vertical-offset="0" max-vertical-offset="558" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/library/node_globals.js">
@@ -351,14 +354,36 @@
         <state line="6" column="9" selection-start="195" selection-end="195" vertical-scroll-proportion="0.11724138" vertical-offset="0" max-vertical-offset="14161" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/menu.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="46" selection-start="626" selection-end="626" vertical-scroll-proportion="0.2578763" vertical-offset="0" max-vertical-offset="857" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="532" column="5" selection-start="8299" selection-end="8299" vertical-scroll-proportion="0.33295584" vertical-offset="8750" max-vertical-offset="15453" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reqlog.frs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="81" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="510" />
+        <state line="24" column="81" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.6974359" vertical-offset="0" max-vertical-offset="663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/short.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="64" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/short.frs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="39" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="883" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/srvr.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="4" selection-start="3177" selection-end="3177" vertical-scroll-proportion="0.37606838" vertical-offset="1837" max-vertical-offset="2720">
+        <state line="164" column="89" selection-start="4434" selection-end="4434" vertical-scroll-proportion="3.0600226" vertical-offset="86" max-vertical-offset="3519">
           <folding />
         </state>
       </provider>

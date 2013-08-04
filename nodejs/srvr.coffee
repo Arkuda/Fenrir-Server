@@ -34,9 +34,13 @@ locals = {
   title: 		   'Fenrir',
   description: 'KARO4u LOL APP',
   author: 	   'Arkuda63',
+  siteUrl:     "localhost:4000",
   fileSave:    "save.frs",
   fileReqLog:  "reqlog.frs",
+  fileShort:   "short.frs",
   uploadPath:  "/temp/",
+  shortLink:   "",
+  isFirst:     false,
   _layoutFile: true,
   debugIsOn:   true
 }
@@ -84,12 +88,12 @@ loger = (req,res,unicleName,msg)->
 
 
 ##-----------LOAD AND SAVE-----
-saveToJson = ()->
-  sjson = JSON.stringify(arrayOfClients)
-  fs.writeFileSync(locals.fileSave,sjson)
+saveToJson = (varSave,fileSave)->
+  sjson = JSON.stringify(varSave)
+  fs.writeFileSync(fileSave,sjson)
 
-loadJson = (res)->
-  fs.readFile(locals.fileSave,(err,data)->
+loadJson = (fileToLoad)->
+  fs.readFile(fileToLoad,(err,data)->
       arrayOfClients = JSON.parse(data))
 ##-----------LOAD AND SAVE-----
 
@@ -110,6 +114,33 @@ logRequest = (req)->
 ##-----------DEBUG AREA--------
 
 
+##------------SHORTER----------
+
+ShortLinks = {}
+
+getRandom = (max,min)->
+    return Math.floor(Math.random() * (max - min + 1)) + min
+
+
+shorterCreate = (req) ->
+    #ShortLinks = loadJson(locals.fileShort)
+    randomized = [getRandom(9,0),getRandom(9,0),getRandom(9,0),getRandom(9,0),getRandom(9,0),getRandom(9,0),getRandom(9,0)]
+    randomized = randomized[0] + "" + randomized[1] + "" + randomized[2] + "" + randomized[3] + "" + randomized[4] + "" + randomized[5] + "" + randomized[6]
+    ShortLinks[randomized] = req.body.FullUrl;
+    saveToJson(ShortLinks,locals.fileShort)
+    ShortLinks = null
+    return  randomized
+
+
+shorterGet = (req,res,id) ->
+    ShortLinks = loadJson(locals.fileShort)
+    printDebug(ShortLinks)
+    shortI = ShortLinks[id]
+    printDebug(shortI)
+    return shortI
+
+
+##------------SHORTER----------
 
 
 
@@ -124,13 +155,13 @@ app.get '/', (req,res) ->
 
 app.get '/log/:cuniclename/:cmsg',(req, res) ->
     loger(req,res,req.params.cuniclename,req.params.cmsg)
-    saveToJson()
+    saveToJson(arrayOfClients,locals.fileSave)
     logRequest(req)
     res.render('404.ejs', locals)
 
 
 app.get '/list', (req, res) ->
-    loadJson(res)
+    loadJson(locals.fileSave)
     logRequest(req)
     res.render('list.ejs', { locals: { arrayOfCl: arrayOfClients, title: locals.title, description: locals.description, author: locals.author, _layoutFile: locals._layoutFile }})
 
@@ -140,9 +171,25 @@ app.get '/upld', (req,res) ->
     res.render('upload.ejs', locals)
 
 
+
 app.post '/upld', (req,res,next) ->
     sfile = req.files.userFile
     fs.writeFile(locals.uploadPath + sfile.name,sfile)
+
+app.get '/s', (req,res) ->
+    locals.isFirst = true;
+    res.render('short.ejs', locals)
+
+app.post '/s', (req,res) ->
+    locals.shortLink = shorterCreate(req,res)
+    locals.isFirst = false;
+    res.render('short.ejs', locals)
+
+app.get '/s/:sid', (req,res) ->
+    redirectUrl = shorterGet(req,res,req.params.sid)
+    if (not (redirectUrl.substring(0,7) is "http://"))  and  (not (redirectUrl.substring(0,8)is "https://"))
+      redirectUrl = "http://" + redirectUrl
+    res.redirect(redirectUrl)
 
 
 app.get '/*', (req,res) ->
